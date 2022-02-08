@@ -1,0 +1,9 @@
+.change-image img:nth-child(2){
+    display: none;
+}
+.change-image:hover img:nth-child(2){
+    display: block;
+}
+.change-image:hover img:first-child {
+    display: none;
+}

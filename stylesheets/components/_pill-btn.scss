@@ -1,0 +1,14 @@
+.pill-btn-shadow{
+    &:hover{
+        box-shadow: 0 2px 0 0 $secondary;
+    }
+}
+
+
+.pill-btn-primary{
+    &:hover{
+        background-color: $primary;
+        border-color: $primary;
+        color: $secondary
+    }
+}

@@ -1,0 +1,24 @@
+.list-hovered{
+    position: relative;
+}
+
+.list-hovered span:first-child{
+    position: absolute;
+    left: 0;
+    transition: 0.3s ease;
+    opacity: 0;
+}
+.list-hovered:hover span:first-child, .list-hovered.active span:first-child{
+   opacity: 1;
+   color:$primary;
+}
+
+.list-hovered span:last-child{
+    transition: margin 0.3s ease;
+    margin-left: 0;
+}
+.list-hovered:hover span:last-child, .list-hovered.active span:last-child{
+    margin-left: 20px;
+    color:$primary;
+
+}
