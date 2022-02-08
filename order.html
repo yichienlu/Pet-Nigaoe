@@ -13,9 +13,19 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.15-rc1/jquery.twzipcode.min.js"></script>
+
+    <style>
+        @media screen and (min-width:992px) {
+            .city, .town {
+                width: 48%;
+            }
+        }
+    </style>
 </head>
 
 <body class="position-relative">
@@ -84,7 +94,10 @@
                         </div>
                         <div class="col mb-3">
                             <label for="address" class="form-label">收件地址</label>
-                            <div class="row">
+                            <div id="twzipcode" class="d-lg-flex justify-content-between"></div>
+                            <input type="text" class="form-control" id="address" placeholder="請輸入詳細地址">
+
+                            <!-- <div class="row">
                                 <div class="col-lg-6 mb-3">
                                     <select class="form-select" aria-label="city">
                                         <option selected disabled>請選擇縣市</option>
@@ -104,7 +117,8 @@
                                 <div class="col mb-3">
                                     <input type="text" class="form-control" id="address" placeholder="請輸入詳細地址">
                                 </div>
-                            </div>
+                            </div> -->
+
                         </div>
                         <div class="col mb-3">
                             <label for="designer" class="form-label">選擇設計師風格</label>
@@ -149,7 +163,6 @@
                             <h4 class="fw-bold mb-4">總金額 NT $300</h4>
                             <button type="button" class="btn btn-primary rounded-pill px-5">送出訂購資訊</button>
                         </div>
-
                     </form>
                 </div>
             </div>
@@ -191,6 +204,20 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.15-rc1/jquery.twzipcode.min.js"></script>
+
+    <script>
+        // twzipcode參考 https://www.wfublog.com/2017/10/taiwan-county-town-zip-address-twzipcode-jquery.html
+        $("#twzipcode").twzipcode({
+            countySel: "", 
+            districtSel: "", 
+            zipcodeIntoDistrict: true, 
+            css: ["form-select city mb-3", "form-select town mb-3"], 
+            countyName: "city", 
+            districtName: "town" 
+        });
+    </script>
 </body>
 
 </html>
